@@ -1,0 +1,24 @@
+{
+  "name": "terraform-json-converter",
+  "version": "1.0.0",
+  "description": "Module converts custom structured json to terraform modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nithinpachday/terraform-json-converter.git"
+  },
+  "keywords": [
+    "terraform",
+    "json"
+  ],
+  "author": "Nithin P B",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nithinpachday/terraform-json-converter/issues"
+  },
+  "homepage": "https://github.com/nithinpachday/terraform-json-converter#readme"
+}
