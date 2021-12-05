@@ -1,7 +1,7 @@
 
 # terraform-json-converter
 
-A Module convertes custom strctured representation of terraform into hcl terraform template
+A Module convertes custom structured representation of terraform into hcl terraform template
 
 ## Installing
 Using npm
