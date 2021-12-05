@@ -57,30 +57,30 @@ Module converts compatible json to hcl terraform module
 
 ```json
 {
-  ec2: {
-    source: 'git:github.com:nithinpachday/terraform-json-converter.git',
-    ami_id: 'ami-icvcv345498',
-    aws_region: 'us-east-1',
-    description: 'Test ec2 module custom json',
-    resource_tags: {
-      ApplicationName: 'TestApplicationName',
-      CostCenter: '0000'
+  "ec2": {
+    "source": "git:github.com:nithinpachday/terraform-json-converter.git",
+    "ami_id": "ami-icvcv345498",
+    "aws_region": "us-east-1",
+    "description": "Test ec2 module custom json",
+    "resource_tags": {
+      "ApplicationName": "TestApplicationName",
+      "CostCenter": "0000"
     },
-    network_interface: [
+    "network_interface": [
       {
-        device_index: 0,
-        network_interface_id: 'sdfsfsdf'
+        "device_index": 0,
+        "network_interface_id": "eni-sfsfrr6tertcxx"
       },
       {
-        device_index: 1,
-        network_interface_id: 'dgdgdfg'
+        "device_index": 1,
+        "network_interface_id": "eni-sfsfrr6tertcxx"
       }
     ],
-    root_block_device: [
+    "root_block_device": [
       {
-        delete_on_termination: true,
-        volume_size: 20,
-        volume_type: 'gp-2'
+        "delete_on_termination": true,
+        "volume_size": 20,
+        "volume_type": "gp-2"
       }
     ]
   }
