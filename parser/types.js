@@ -1,12 +1,12 @@
 const { stringExtender } = require('./utilities')
 
-function typeDecider(data, option) {
+function typeDecider(data, option, isInsideArray) {
     if (Array.isArray(data)) return processArray(data, option)
     if (typeof (data) === 'object') {
         if (option) return processObjectNested(data, option)
         else return processObject(data)
     }
-    if (typeof (data) === 'string') return processString(data, option)
+    if (typeof (data) === 'string') return processString(data, option, isInsideArray)
     if (typeof (data) === 'number') return processNumber(data, option)
     if (typeof (data) === 'boolean') return processBoolean(data, option)
 }
@@ -14,7 +14,7 @@ function typeDecider(data, option) {
 function processArray(data, option) {
     let localString = `${option}\t = \t[\n`
     for (const [index, arrayItem] of data.entries()) {
-        localString = stringExtender(localString, typeDecider(arrayItem))
+        localString = stringExtender(localString, typeDecider(arrayItem, null, true))
         if (data.length !== (index + 1)) localString = stringExtender(localString, ',')
     }
     return `${localString}\n\t]\n`
@@ -38,7 +38,8 @@ function processObjectNested(data, option) {
     return `${localObject} \t}\n`
 }
 
-function processString(data, option) {
+function processString(data, option, isInsideArray) {
+    if(isInsideArray)return `\t "${data}" \n`
     return `\t${option}\t = \t "${data}" \n`
 }
 
